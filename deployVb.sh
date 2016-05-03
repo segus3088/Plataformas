@@ -1,17 +1,26 @@
 #!/bin/bash
 #para la clase
 
+#para realizarlo pasando parametros
+# $1 -> nombre de la maquina
+# $2 -> tamaño memoria
+# $3 -> tipo de sistema operativo
+
+VM = $1
+memoriaN = $2
+typesOS = $3
+ 
 #creado la variable del nombre
 #leyendo la variable del nombre de la maquina
-echo "Nombre de la maquina:"
-read VM
+#echo "Nombre de la maquina:"
+#read VM
 
 
 #Create a 32GB “dynamic” disk.
 VBoxManage createhd --filename $VM.vdi --size 32768
 
 #Creando una copia mas apropiada para la maquina
-VBoxManage createvm --name $VM --ostype "Linux_64" --register
+VBoxManage createvm --name $VM --ostype $typesOS --register
 
 #Creando controlado Add a SATA controller with the dynamic disk attached.
 VBoxManage storagectl $VM --name "SATA Controller" --add sata --controller IntelAHCI
@@ -27,7 +36,7 @@ VBoxManage storagectl $VM --name "IDE Controller" --add ide
 #Configuraciones generales Misc system settings.
 VBoxManage modifyvm $VM --ioapic on
 VBoxManage modifyvm $VM --boot1 dvd --boot2 disk --boot3 none --boot4 none
-VBoxManage modifyvm $VM --memory 1024 --vram 128
+VBoxManage modifyvm $VM --memory $memoriaN --vram 128
 VBoxManage modifyvm $VM --nic1 bridged --bridgeadapter1 e1000g0
 
 #Configuration is all done, boot it up! If you’ve done this one a remote machine, you can RDP to the console via vboxhost:3389.
