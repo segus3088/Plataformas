@@ -6,9 +6,9 @@
 # $2 -> tamaño memoria
 # $3 -> tipo de sistema operativo
 
-VM = $1
-memoriaN = $2
-typesOS = $3
+VM=$1
+memoriaN=$2
+typesOS=$3
  
 #creado la variable del nombre
 #leyendo la variable del nombre de la maquina
