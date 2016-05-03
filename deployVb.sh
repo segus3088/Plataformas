@@ -1,4 +1,5 @@
 #!/bin/bash
+#para la clase
 
 #creado la variable del nombre
 #leyendo la variable del nombre de la maquina
