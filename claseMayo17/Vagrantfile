@@ -1,0 +1,3 @@
+Vagrant.configure("2") do [config]
+	config.vm.define :HAProxy do [node]
+		node.vm.base = "base"
