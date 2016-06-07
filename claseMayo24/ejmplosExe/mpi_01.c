@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 		MPI_Send(msg, strlen(msg) + 1, MPI_CHAR, dest, tag, MPI_COMM_WORLD);
 	} else if (my_rank == 1) {
 		MPI_Recv(msg, 20, MPI_CHAR, sourceM, tag, MPI_COMM_WORLD, &status);
-		printf("Mensaje recibido: %s\n", );
+		printf("Mensaje recibido: %s\n", msg);
 	}
 	MPI_Finalize();
 }
