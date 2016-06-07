@@ -28,3 +28,7 @@ mpi01: mpi01c
 	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 2 --hostfile machinefile /shared/mpi01
 mpi01c:
 	mpicc mpi_01.c -o /shared/mpi01
+mpiD41: mpiD41c
+	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 2 --hostfile machinefile /shared/mpiD41
+mpiD41c:
+	mpicc mpiD41.c -o /shared/mpiD41
