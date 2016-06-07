@@ -10,3 +10,5 @@ sudo mount $1:/shared /shared
 df -h 
 
 sudo apt-get install -y openmpi-bin openmpi-doc libopenmpi-dev
+
+sudo echo "[$1]:/shared /shared" >> /etc/fstab
