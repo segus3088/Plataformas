@@ -33,6 +33,6 @@ mpiD41: mpiD41c
 mpiD41c:
 	mpicc mpiD41.c -o /shared/mpiD41
 mpiJ07: mpiJ07c
-	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 8 --hostfile machinefile /shared/mpiJ07
+	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 5 --hostfile machinefile /shared/mpiJ07
 mpiJ07c:
 	mpicc mpiJ07.c -o /shared/mpiJ07
