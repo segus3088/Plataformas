@@ -36,3 +36,7 @@ mpiJ07: mpiJ07c
 	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 5 --hostfile machinefile /shared/mpiJ07
 mpiJ07c:
 	mpicc mpiJ07.c -o /shared/mpiJ07
+mpiJ07_reduce: mpiJ07_reducec
+	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 5 --hostfile machinefile /shared/mpiJ07_reduce
+mpiJ07_reducec:
+	mpicc mpiJ07_reduce.c -o /shared/mpiJ07_reduce
