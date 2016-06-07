@@ -24,3 +24,7 @@ ex5: example5
 	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 8 --hostfile machinefile /shared/ex5
 example5:
 	mpicc mpiExample5.c -o /shared/ex5
+mpi01: mpi01c
+	mpirun --mca btl_tcp_if_exclude lo,eth0 -np 8 --hostfile machinefile /shared/mpi01
+mpi01c:
+	mpicc mpi_01.c -o /shared/mpi01
